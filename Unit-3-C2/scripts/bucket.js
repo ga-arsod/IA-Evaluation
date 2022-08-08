@@ -50,3 +50,9 @@ let removeData = (ele, index) => {
     container.innerHTML = "";
     appendData(data);
 }
+
+let checkOutBtn = document.getElementById("confirm_checkout");
+
+checkOutBtn.addEventListener("click", function() {
+    window.location.href = "./checkout.html"
+})
