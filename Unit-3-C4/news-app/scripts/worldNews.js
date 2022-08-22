@@ -8,9 +8,26 @@ document.getElementById("navbar").innerHTML = navbar();
 let side = document.getElementById("sidebar");
 sidebar(side)
 
-let getID = (event) => {
-
-}
+let India = document.getElementById("in");
+India.addEventListener("click", () => {
+    getData(India.id)
+})
+let Usa = document.getElementById("us");
+Usa.addEventListener("click", () => {
+    getData(Usa.id)
+})
+let China = document.getElementById("ch");
+China.addEventListener("click", () => {
+    getData(China.id)
+})
+let Uk = document.getElementById("uk");
+Uk.addEventListener("click", () => {
+    getData(Uk.id)
+})
+let Nz = document.getElementById("nz");
+Nz.addEventListener("click", () => {
+    getData(Nz.id)
+})
 
 let searchData = async () => {
     let q = document.getElementById("search").value
