@@ -30,6 +30,9 @@ Nz.addEventListener("click", () => {
 })
 
 let searchData = async () => {
+    let container = document.getElementById("news_container");
+    container.innerHTML = "";
+
     let q = document.getElementById("search").value
 
     try {
@@ -44,9 +47,12 @@ let searchData = async () => {
     }
 }
 
-// document.getElementsByClassName("links").addEventListener("click", (event) => {
-//     console.log(event)
-// })
+
+document.getElementById("search").addEventListener("keypress", (event) => {
+    if(event.key == "Enter") {
+        searchData();
+    }
+})
 
 let getData = async (id) => {
     if(!id) {
