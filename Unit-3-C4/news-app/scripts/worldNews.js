@@ -29,6 +29,8 @@ Nz.addEventListener("click", () => {
     getData(Nz.id)
 })
 
+
+// On search this function will get called after pressing enter in search box but it will only for "tesla" and "twitter".
 let searchData = async () => {
     let container = document.getElementById("news_container");
     container.innerHTML = "";
@@ -54,6 +56,8 @@ document.getElementById("search").addEventListener("keypress", (event) => {
     }
 })
 
+
+// Getting data query wise and appending it to DOM.
 let getData = async (id) => {
     if(!id) {
         id = country;

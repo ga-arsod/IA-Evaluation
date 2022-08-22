@@ -1,7 +1,7 @@
 export const navbar = () => {
 
     return `
-        <input type="text" id="search" />
+        <input placeholder="Search for news" type="text" id="search" />
         <div id="country_links">
             <h3 id="in" class="links">India</h3>
             <h3 id="us" class="links">USA</h3>
