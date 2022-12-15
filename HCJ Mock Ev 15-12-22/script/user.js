@@ -1,10 +1,8 @@
 
-let data;
-
 const getData = async () => {
     const res = await fetch("https://lively-boot-boa.cyclic.app/books");
     const d = await res.json();
-    data = d;
+
     appendData(d);
     return;
 };
@@ -13,6 +11,8 @@ getData();
 
 
 const appendData = async (data) => {
+    document.getElementById("mainContainer").innerHTML = "";
+
     data.map((ele) => {
         
         let img = document.createElement("img");
@@ -102,10 +102,54 @@ const openModal = (ele) => {
     btn2.onclick = () => {
         let modal = document.getElementById("modal");
         modal.style.display = "none";
+        borrowUpdate(ele.id);
     }
 
     let div2 = document.createElement("div");
     div2.append(btn,btn2);
 
     modalDiv.append(img, title, author, edition, borrower, date, cost, div2);
+};
+
+
+const filterData = async () => {
+    let filter = document.getElementById("filter").value;
+    let sort = document.getElementById("sort").value;
+
+    let url;
+
+    if(filter.length === 0 && sort.length == 0) {
+        url = "https://lively-boot-boa.cyclic.app/books"
+    }
+    else if(sort.length == 0) {
+        url = `https://lively-boot-boa.cyclic.app/books?genre=${filter}`
+    }
+    else if(filter.length == 0) {
+        url = `https://lively-boot-boa.cyclic.app/books?_sort=cost&_order=${sort}`
+    }
+    else {
+        url = `https://lively-boot-boa.cyclic.app/books?_sort=cost&_order=${sort}&genre=${filter}`
+    }
+
+    const res = await fetch(url);
+    const d = await res.json();
+
+    appendData(d);
+    return;
+};
+
+
+const borrowUpdate = async (id) => {
+    const res = await fetch(`https://lively-boot-boa.cyclic.app/books/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            borrowed: true
+        })
+    });
+
+    const data = await res.json();
+    console.log(data);
 }

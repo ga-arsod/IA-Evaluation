@@ -1,3 +1,17 @@
+#sortNdFilter {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+#sortNdFilter > select {
+    width: 200px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: large;
+}
+
 #mainContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -32,4 +46,15 @@
     width: 30px;
     height: 30px;
     font-size: x-large;
+}
+
+#modalDiv  button {
+    width: 100px;
+        height: 40px;
+        background-color: #91b3fa;
+        border: none;
+        font-size: large;
+        color: white;
+        border-radius: 10px;
+        margin-right: 20px;
 }
