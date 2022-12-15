@@ -18,7 +18,7 @@ const postData = async () => {
         borrowed: false
     };
 
-    const res = await fetch("http://localhost:3000/books", {
+    const res = await fetch("https://lively-boot-boa.cyclic.app/books", {
         method: "POST", 
         headers: {
             "Content-type": "application/json"
@@ -32,7 +32,7 @@ const postData = async () => {
 };
 
 const getData = async () => {
-    const res = await fetch("http://localhost:3000/books");
+    const res = await fetch("https://lively-boot-boa.cyclic.app/books");
     const data = await res.json();
 
     appendData(data);
@@ -99,7 +99,7 @@ const appendData = (data) => {
 
 const deleteBook = async (id) => {
 
-    const res = await fetch(`http://localhost:3000/books/${id}`, {
+    const res = await fetch(`https://lively-boot-boa.cyclic.app/books/${id}`, {
         method: "DELETE"
     });
 

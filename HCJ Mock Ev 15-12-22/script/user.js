@@ -2,7 +2,7 @@
 let data;
 
 const getData = async () => {
-    const res = await fetch("http://localhost:3000/books");
+    const res = await fetch("https://lively-boot-boa.cyclic.app/books");
     const d = await res.json();
     data = d;
     appendData(d);
