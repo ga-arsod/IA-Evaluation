@@ -1,0 +1,35 @@
+#mainContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+#mainContainer button {
+    width: 200px;
+    height: 40px;
+    background-color: #91b3fa;
+    border: none;
+    font-size: larger;
+    color: white;
+    border-radius: 10px;
+}
+
+#modal {
+    position: absolute;
+    z-index: 100;
+    top: 200px;
+    left: 40%;
+    background-color: rgb(223, 223, 223);
+    padding: 20px;
+    display: none;
+}
+
+#modal>button {
+    background-color: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: x-large;
+}

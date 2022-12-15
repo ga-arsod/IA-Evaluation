@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 50%;
+        margin: 30vh auto;
+        text-align: center;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: auto;
+    }
+
+    input {
+        height: 30px;
+        padding: 5px 10px;
+        font-size: large;
+        margin: 10px 0;
+    }
+    #SbmtBtn {
+        width: 200px;
+        height: 30px;
+        font-size: large;
+        margin: 10px auto;
+        border: none;
+        background-color: #91b3fa;
+        color: white;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div>
+        <h1>Login</h1>
+        <form action="" >
+            <input type="email" id="emailInput">
+            <input type="text" id="passInput">
+            <button onclick="loginFun()" id="SbmtBtn">Login</button>
+        </form>
+    </div>
+</body>
+</html>
+<script src="./script/login.js"></script>
